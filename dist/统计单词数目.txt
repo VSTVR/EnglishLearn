@@ -1,0 +1,4 @@
+essentialword.txt --- 44
+word.txt --- 826
+淘汰.txt --- 21
+统计单词数目.txt --- 3
