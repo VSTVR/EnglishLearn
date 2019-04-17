@@ -1,5 +1,7 @@
+# coding=utf-8
+
 import os
-def ishadfuhao(word):
+def semicolon_exist(word):
     if ';'in word:
         return True
     elif '；'in word:
@@ -26,7 +28,7 @@ def isin(word,lists):
         if word in l:
             return l,True
     return None,False
-def getall(path):
+def getcontent(path):
     list=[]
     fp=open(path,'r')
     list=fp.readlines()
@@ -34,17 +36,18 @@ def getall(path):
     return list
 
 def main():
-    path=os.getcwd()+'/'+'word.txt'
-    extrapath=os.getcwd()+'/'+'essentialword.txt'
+    path=os.getcwd()+'/notebook/'+'word.txt'
+    extrapath=os.getcwd()+'/notebook/'+'essentialword.txt'
+    helppath=os.getcwd()+'/'+'helpdoc.txt'
 
     while 1:
-        word = input('请输入想要记录的单词(以“;”为中英文分界)：')
+        word = input('请输入想要记录的单词(第一次使用请输入#help开启帮助文档)：')
         wordcut = split(word)
-        lists = getall(path)
-        extralist=getall(extrapath)
+        lists = getcontent(path)
+        extralist=getcontent(extrapath)
         aim ,boolresult=isin(wordcut[0],lists)
 
-        if ishadfuhao(word)is True:
+        if semicolon_exist(word)is True:
             if boolresult is True:
                 print('已存在:', aim)
                 if isinessentialword(wordcut[0], extralist) is False:
@@ -55,8 +58,27 @@ def main():
                 fi = open(path, 'a')
                 fi.write(wordcut[0] + '——' + wordcut[1] + '\n')
                 fi.close()
-        elif ishadfuhao(word)is False:
+
+        elif '#'in word:
+            if word=='#help':
+                f = open(helppath, 'rt')
+                data = f.read()
+                f.close()
+                print(data)
+
+            elif word=='#backup':
+                from createzip import backup
+                backup()
+
+        elif semicolon_exist(word)is False:
             if boolresult is True:
                 print('存在：',aim)
             else:
                 print('不存在')
+
+
+
+
+
+if __name__ == '__main__':
+    main()

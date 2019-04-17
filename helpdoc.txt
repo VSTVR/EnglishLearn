@@ -1,0 +1,5 @@
+1 Search word: input the word or Chinese without ';'
+2 #help: show the helpdoc
+3 #random:
+4 #backup:  backup your word repositery into a compressed file
+5 #search:  auto translate your notebook
