@@ -18,7 +18,7 @@ def backup():
 
     t = time.ctime().split()
     t_detail = t[3].split(':')
-    filename = t[2] + '_' + t[1] + '_' + t[4] + ' ' + t_detail[0] + '时' + t_detail[1] + '分' + '.zip'
+    filename = t[2] + '_' + t[1] + '_' + t[4] + ' ' + t_detail[0] + '时' + t_detail[1] + '分' + '.zip' #注意这里不能有:号，空格可以
 
     sourcepath = os.getcwd() + '/notebook'
     aimpath = os.getcwd() + '/backup/' + filename
