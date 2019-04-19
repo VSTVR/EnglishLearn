@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import os
+from searchword import *
 def semicolon_exist(word):
     if ';'in word:
         return True
@@ -35,10 +36,15 @@ def getcontent(path):
     fp.close()
     return list
 
+
+
+
+
 def main():
     path=os.getcwd()+'/notebook/'+'word.txt'
     extrapath=os.getcwd()+'/notebook/'+'essentialword.txt'
     helppath=os.getcwd()+'/'+'helpdoc.txt'
+    autopath=os.getcwd()+'/auto/'+'autotranslate.txt'
 
     while 1:
         word = input('请输入想要记录的单词(第一次使用请输入#help开启帮助文档)：')
@@ -69,6 +75,24 @@ def main():
             elif word=='#backup':
                 from createzip import backup
                 backup()
+
+            elif word=='#search':
+
+                wordlist = []
+                fp = open(path, 'r')
+                wordlist = fp.readlines()
+                fp.close()
+
+                translatelist = []
+                for i in wordlist:
+                    words = i.split('——')
+                    translatelist.append(words[0])
+                del (translatelist[0])
+
+                fp = open(autopath, 'w')
+                for i in translatelist:
+                    fp.write(i + '——' + translate(i) + '\n')
+                fp.close()
 
         elif semicolon_exist(word)is False:
             if boolresult is True:
