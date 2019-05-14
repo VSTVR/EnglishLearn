@@ -1,0 +1,3 @@
+essentialword.txt --- 2
+word.txt --- 13
+统计单词数目.txt --- 2

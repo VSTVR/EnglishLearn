@@ -70,6 +70,7 @@ def translate():
         tran = trans['translateResult'][0][0]['tgt']
         res.set(tran)
 
+#---------------------------------------------------------------
 
 # 按钮
 button = Button(root, text='翻译', width='10', command=translate)

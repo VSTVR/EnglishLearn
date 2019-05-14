@@ -1,4 +1,5 @@
 
+
 '''
 //hashlib
 import hashlib
@@ -25,7 +26,7 @@ l1=[1,2,3,4,5,6]
 l2=['one','two','three','four','five','six']
 
 n=list(map(f,l1,l2))
-print(n)
+print(n)   #[[1, 'one'], [2, 'two'], [3, 'three'], [4, 'four'], [5, 'five'], [6, 'six']]
 '''
 
 '''
@@ -53,7 +54,33 @@ result=list(f)
 print(result)
 '''
 
+'''
+//动态绑定外界普通函数
+class Student(object):
+    pass
 
+
+
+def set_age(self, age):
+    self.age = age
+
+
+stu1 = Student();
+stu2 = Student();
+
+from types import MethodType
+
+#但是这个属性不是实例自己的方法 现在给它设置这个方法
+stu1.set_age = MethodType(set_age, stu1)
+stu1.set_age(33)
+print(stu1.age)
+print(stu2.age)  #error
+'''
+
+'''
+//装饰器
+
+'''
 
 
 
