@@ -89,6 +89,10 @@ def main():
                     translatelist.append(words[0])
                 del (translatelist[0])
 
+                clearf = open(autopath, 'r+')
+                clearf.truncate()
+                clearf.close()
+
                 fp = open(autopath, 'w')
                 for i in translatelist:
                     fp.write(i + '——' + translate(i) + '\n')

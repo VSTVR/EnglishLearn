@@ -1,4 +1,8 @@
+import os
 
+path=os.getcwd()+'/test.txt'
+f = open(path, 'r+')
+f.truncate()
 
 '''
 //hashlib

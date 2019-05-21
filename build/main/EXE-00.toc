@@ -28,8 +28,8 @@
   ('main',
    'D:\\pythonproject\\Githubconnecting\\englishlearn\\EnglishLearn\\main.py',
    'PYSOURCE'),
-  ('python36.dll', 'd:\\pythonenvironment\\python36.dll', 'BINARY'),
   ('VCRUNTIME140.dll', 'd:\\pythonenvironment\\VCRUNTIME140.dll', 'BINARY'),
+  ('python36.dll', 'd:\\pythonenvironment\\python36.dll', 'BINARY'),
   ('_ssl', 'd:\\pythonenvironment\\DLLs\\_ssl.pyd', 'EXTENSION'),
   ('pyexpat', 'd:\\pythonenvironment\\DLLs\\pyexpat.pyd', 'EXTENSION'),
   ('_hashlib', 'd:\\pythonenvironment\\DLLs\\_hashlib.pyd', 'EXTENSION'),
@@ -51,7 +51,7 @@
  [],
  False,
  False,
- 1557825836,
+ 1558437616,
  [('run.exe',
    'd:\\pythonenvironment\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])
